@@ -27,7 +27,18 @@ proporcionan una alternativa flexible a la subclasificación para extender la fu
 
 
 <p align="center">
-  <img width="100%" alt="Decorator" src="https://github.com/user-attachments/assets/3949567e-acdf-48c9-869d-6dab0a59f67c">
+  <img width="100%" alt="Decorator" src="https://github.com/user-attachments/assets/3949567e-acdf-48c9-869d-6dab0a59f67c" />
+</p>
+
+
+
+## Strategy
+Define una familia de algoritmos, encapsula cada uno en un objeto, de modo que son
+intercambiables. El Strategy permite cambiar el algoritmo sin que afecte al cliente.
+
+
+<p align="center">
+  <img width="1054" height="564" alt="Strategy" src="https://github.com/user-attachments/assets/9d512956-d3f4-4108-a24b-a6db7144883c" />
 </p>
 
 
