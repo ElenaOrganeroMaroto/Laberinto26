@@ -52,5 +52,25 @@ a objetos compuestos.
 
 ---
 
+## Iterator
+Proporciona una forma de acceder secuencialmente a los elementos de un agregado
+(colección, conjunto, aggregate) sin exponer su implementación.
+
+<p align="center">
+  
+</p>
+
+---
+
+## Template Method
+Define el esqueleto de un algoritmo en una operación, dejando que las subclases definan
+algunos de los pasos. El Template Method deja que las subclases redefinan ciertos pasos de un
+algoritmo sin variar la estructura del algoritmo.
+
+<p align="center">
+  
+</p>
+
+---
 
 
