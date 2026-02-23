@@ -10,11 +10,25 @@ Los componentes principales que forman el laberinto son los siguientes:
 ## Diagrama inicial
 
 
+
 ## Factory Method
 Define una interface para crear un objeto, pero deja que las subclases decidan qué clase
 instanciar. El Factory Method permite que una clase posponga la instanciación a las subclases.
 
+<p align="center">
+<img width="100%" alt="Factory Method" src="https://github.com/user-attachments/assets/c6e439e3-0c11-4a38-b5fc-029d194d27e4" />
+</p>
+
+
+
+## Decorator
+Asigna dinámicamente responsabilidades adicionales a un objeto. Los decoradores
+proporcionan una alternativa flexible a la subclasificación para extender la funcionalidad.
+
 
 <p align="center">
-  <img width="100%" alt="Factory Method" src="https://github.com/user-attachments/assets/fbcad355-eff7-401d-a71e-d031e14e713f">
+  <img width="100%" alt="Decorator" src="https://github.com/user-attachments/assets/3949567e-acdf-48c9-869d-6dab0a59f67c">
 </p>
+
+
+
