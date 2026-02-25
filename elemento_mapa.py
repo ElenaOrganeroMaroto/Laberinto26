@@ -14,9 +14,7 @@ class ElementoMapa:
     def recorrer(self, func):
         func(self) #Delega la responsabilidad a sus hijos 
 
-    """def esPuerta(self):
-        return False"""
-
     def __str__(self):
         return "ElementoMapa" 
+
     
