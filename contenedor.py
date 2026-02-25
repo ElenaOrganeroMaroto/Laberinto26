@@ -1,0 +1,28 @@
+from elemento_mapa import ElementoMapa
+
+class Contenedor(ElementoMapa):
+    def __init__(self):
+        super().__init__()
+        self.hijos = []
+        self.orientaciones = []
+
+    def agregar_hijo(self, hijo):
+        hijo.padre = self
+        self.hijos.append(hijo)
+
+    def eliminar_hijo(self, hijo):
+        self.hijos.remove(hijo)
+
+    def agregar_orientacion(self, orientacion):
+        self.orientaciones.append(orientacion)
+
+    def eliminar_orientacion(self, orientacion):
+        self.orientaciones.remove(orientacion)
+
+    def recorrer(self, func):
+        func(self)
+        for hijo in self.hijos:
+            hijo.recorrer(func)
+
+        for orientacion in self.orientaciones:
+            orientacion.recorrer(func, self)
