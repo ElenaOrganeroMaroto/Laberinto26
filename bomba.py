@@ -1,4 +1,4 @@
-from decorator import Decorator
+from Decorator import Decorator
 
 class Bomba(Decorator):
     def __init__(self, em):
@@ -22,4 +22,5 @@ class Bomba(Decorator):
         return True
 
     def __str__(self):
+
         return "bomba"
