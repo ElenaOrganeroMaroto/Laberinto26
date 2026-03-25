@@ -1,14 +1,15 @@
-#Hoja
-
 from elemento_mapa import ElementoMapa
 
-
 class Hoja(ElementoMapa):
-    def __init__(self, nombre: str):
-        super().__init__() #Hereda de ElementoMapa
-        self.nombre: str = nombre #Nombre es un atributo que guarda el nombre de la hoja: puerta, pared, ...
+    def __init__(self):
+        super().__init__()
 
-    def __str__(self):
-        return self.nombre
+    def recorrer(self, unBloque):
+        print(self) 
+        unBloque(self)
 
-   
+    def entrar(self, alguien):
+        #Este método es obligatorio porque ElementoMapa lo pide,        """
+        pass
+
+  

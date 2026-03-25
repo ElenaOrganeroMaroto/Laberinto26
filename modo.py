@@ -2,19 +2,23 @@ class Modo:
     def __init__(self):
         pass
 
-    def actuar(self, bicho):
-        self.caminar(bicho)
-        self.atacar(bicho)
-        self.dormir(bicho)
+    def actua(self, unBicho):
+        self.camina(unBicho)
+        self.ataca(unBicho)
+        self.duerme(unBicho)
 
-    def dormir(self, bicho):
+    def ataca(self, unBicho):
+        unBicho.atacar()
+
+    def camina(self, unBicho):
+        orientacion = unBicho.obtenerOrientacionAleatoria()        
+        orientacion.caminar(unBicho)
+
+    def duerme(self, unBicho):
         pass
+    
+    def esAgresivo(self):
+        return False
 
-    def caminar(self, bicho):
-        pass
-
-    def atacar(self, bicho):
-        pass
-
-    def __str__(self):
-        return "modo"
+    def esPerezoso(self):
+        return False

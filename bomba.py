@@ -1,26 +1,30 @@
-from Decorator import Decorator
+from decorator import Decorator
 
 class Bomba(Decorator):
-    def __init__(self, em):
-        super().__init__(em, "Bomba")  # Se le pasa el nombre que se le asigna a la hoja
-        self.activa = False
+    def __init__(self, em=None, nombre="Bomba"):
+        super().__init__(em, nombre)
+        self.activa = False 
 
     def activar(self):
+        print("Bomba activada")
         self.activa = True
 
     def desactivar(self):
+        print("Bomba desactivada")
         self.activa = False
 
-    def entrar(self, alguien):
+    #En python no podemos usar el mismo método con diferentes parámetros, entonces
+    #si en alguien lo inicializamos con None provocamos que el parámetro sea opcional
+    def entrar(self, alguien=None):
         if self.activa:
-            print("¡BOOM! Has chocado con una bomba")
-            # Aquí se puede poner si se quita vida, etc.
-            # self.activa = False  # ¿Se desactiva al explotar?
-        return self.em.entrar(alguien)   # Delegar al elemento decorado
+            if alguien is None: # Si no hay nadie, la bomba explota sin afectar a nadie
+                print("Ha explotado una bomba")
+            else:
+                print(f"{alguien}, te ha explotado una bomba")
+                # Habria que quitar vidas a alguien
+        else:
+            #No hace nada si está desactivada
+            pass
 
-    def esBomba(self):
+    def esBomba(self) -> bool:
         return True
-
-    def __str__(self):
-
-        return "bomba"

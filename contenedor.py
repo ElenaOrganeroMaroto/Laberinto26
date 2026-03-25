@@ -2,27 +2,54 @@ from elemento_mapa import ElementoMapa
 
 class Contenedor(ElementoMapa):
     def __init__(self):
-        super().__init__()
-        self.hijos = []
+        super().__init__() 
+        self.num = None
+        self.hijos = [] #OrderedCollection new
+        self.forma = None
         self.orientaciones = []
+    
 
-    def agregar_hijo(self, hijo):
-        hijo.padre = self
-        self.hijos.append(hijo)
+    # --- Gestión de Hijos ---
+    def agregarHijo(self, unEM):
+        self.hijos.append(unEM)
 
-    def eliminar_hijo(self, hijo):
-        self.hijos.remove(hijo)
+    def eliminarHijo(self, unEM):
+        self.hijos.remove(unEM)
+     
 
-    def agregar_orientacion(self, orientacion):
-        self.orientaciones.append(orientacion)
+    # --- Gestión de Orientaciones ---
+    def agregarOrientacion(self, unaOr):
+        self.forma.agregarOrientacion(unaOr)
 
-    def eliminar_orientacion(self, orientacion):
-        self.orientaciones.remove(orientacion)
+    def eliminarOrientacion(self, unaOr):
+        self.forma.eliminarOrientacion(unaOr)
 
-    def recorrer(self, func):
-        func(self)
-        for hijo in self.hijos:
-            hijo.recorrer(func)
+    def obtenerOrientacionAleatoria(self):
+        return self.forma.obtenerOrientacionAleatoria()
 
-        for orientacion in self.orientaciones:
-            orientacion.recorrer(func, self)
+    def ponerEn_elemento(self, unaOr, unEM):
+        self.forma.ponerEn_elemento(unaOr, unEM)
+
+
+    # --- Acciones ---
+    def entrar(self, alguien):
+        print(f"{alguien} está en {self}")
+        alguien.posicion = self
+
+    def irAlNorte(self, alguien):
+        self.forma.irAlNorte(alguien)
+
+
+    # --- Iterator ---
+    def recorrer(self, unBloque):
+        unBloque(self) 
+        
+        # Primero recorremos los hijos
+        for cada_hijo in self.hijos:
+            cada_hijo.recorrer(unBloque)
+            
+        # Luego recorremos las orientaciones
+        if self.forma:
+            for cada_or in self.forma.orientaciones:
+                cada_or.recorrer_enContenedor(unBloque, self.forma)
+        

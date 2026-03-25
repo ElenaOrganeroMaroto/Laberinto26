@@ -1,218 +1,261 @@
-from laberinto import Laberinto
-from habitacion import Habitacion
-from pared import Pared
-from puerta import Puerta
+from norte import Norte
+from este import Este
+from sur import Sur
+from oeste import Oeste
 from pared_bomba import ParedBomba
 from bomba import Bomba
+from pared import Pared
+from puerta import Puerta
+from personaje import Personaje
+from habitacion import Habitacion
 
 class Juego:
     def __init__(self):
-        self.bichos = []  # OrderedCollection new
         self.laberinto = None
-    
+        self.bichos = []      # OrderedCollection
+        self.person = None
+        self.hilos = {}       # Diccionario
 
-    
-    #--------- BOMBAS ---------
-    def activar_bombas(self):
-        if self.laberinto:
-            for elemento in self.laberinto.hijos:
-                # Preguntamos: ¿este elemento es una bomba?
-                if hasattr(elemento, 'esBomba') and elemento.esBomba():
-                    elemento.activar()
+    # --- acciones ---
+    def abrirPuertas(self):
+        def bloque(each):
+            if each.esPuerta():
+                each.abrir()
+        self.laberinto.recorrer(bloque)
 
+    def activarBombas(self):
+        def bloque(each):
+            if each.esBomba():
+                each.activar()
+        self.laberinto.recorrer(bloque)
 
-    def desactivar_bombas(self):
-        if self.laberinto:
-            for elemento in self.laberinto.hijos:
-                # Preguntamos: ¿este elemento es una bomba?
-                if hasattr(elemento, 'esBomba') and elemento.esBomba():
-                    elemento.desactivar()
-    
+    def cerrarPuertas(self):
+        def bloque(each):
+            if each.esPuerta():
+                each.cerrar()
+        self.laberinto.recorrer(bloque)
 
-    #--------- BICHOS ---------
-    def agregar_bicho(self, un_bicho):
-        self.bichos.append(un_bicho)
-    
-    def eliminar_bicho(self, un_bicho):
-        if un_bicho in self.bichos:
-            self.bichos.remove(un_bicho)
-            return un_bicho
-        return None
-    
-    def get_bichos(self):
-        """Devuelve la lista de bichos"""
-        return self.bichos
-    
+    def desactivarBombas(self):
+        def bloque(each):
+            if each.esBomba():
+                each.desactivar()
+        self.laberinto.recorrer(bloque)
 
-    
-    #--------- FABRICACIÓN ---------
-    def fabricar_habitacion(self):
-        """Crea una nueva habitación sin número"""
-        return Habitacion(0)  # Número por defecto
-    
-    def fabricar_laberinto(self):
-        """Crea un nuevo laberinto"""
-        return Laberinto()
-    
-    def fabricar_pared(self):
-        """Crea una nueva pared"""
-        return Pared()
-    
-    def fabricar_puerta(self):
-        """Crea una nueva puerta"""
-        return Puerta()
+    def agregarPersonaje(self, unaCadena):
+        self.person = Personaje()
+        self.person.nombre = unaCadena
+        self.person.juego = self
+        hab1 = self.obtenerHabitacion(1)
+        hab1.entrar(self.person)
 
 
-    # --------- LABERINTO ---------
-    def get_laberinto(self):
-        return self.laberinto
+    # --- gestion-bichos ---
+    def agregarBicho(self, unBicho):
+        self.bichos.append(unBicho)
+
+    def eliminarBicho(self, unBicho):
+        self.bichos.remove(unBicho)
+
+    def lanzarBicho(self, unBicho):
+        print(unBicho, " se activa")
+
+        # Definimos y guardamos el "proceso" 
+        def proceso():
+            while unBicho.estaVivo():
+                unBicho.actua()        
+        self.hilos[unBicho] = proceso
+
+    def lanzarTodosLosBichos(self):
+        print("Los bichos despiertan")
+        for each in self.bichos:
+            self.lanzarBicho(each)
+
+    def terminarBicho(self, unBicho):
+        unBicho.vidas = 0
+        print(unBicho, "muere")
+
+    def terminarTodosLosBichos(self):
+        print("Los bichos terminan")
+        for each in self.bichos:
+            self.terminarBicho(each)
+ 
     
-    def set_laberinto(self, laberinto):
-        self.laberinto = laberinto
+    # --- ataques ---
+    def buscarPersonaje(self, unBicho):
+        if unBicho.posicion == self.person.posicion:
+            return self.person
+        else:
+            return None
+
+    def muereBicho(self, unBicho):
+        self.terminarBicho(unBicho)
+
+    def muerePersonaje(self):
+        print("Manmatao. Fin del juego")
+        self.terminarTodosLosBichos()
 
 
-    #--------- HABITACIÓN ---------
-    def obtener_habitacion(self, un_num):
-        """Obtiene una habitación por su número"""
-        if self.laberinto:
-            return self.laberinto.obtener_habitacion(un_num)
-        return None
-    
+    # --- factory method ---
+    def asignarOrientaciones(self, unCont):
+        unCont.orientaciones.append(self.fabricarNorte())
+        unCont.orientaciones.append(self.fabricarEste())
+        unCont.orientaciones.append(self.fabricarSur())
+        unCont.orientaciones.append(self.fabricarOeste())
 
-    #-------- EJEMPLOS ---------
-    def fabricar_habitacion_con_num(self, un_num):
-        """Crea una nueva habitación con número y paredes"""
-        hab = Habitacion(un_num)
-        hab.norte = self.fabricar_pared()
-        hab.este = self.fabricar_pared()
-        hab.oeste = self.fabricar_pared()
-        hab.sur = self.fabricar_pared()
-        return hab
-    
-    
-    
-    def fabricar_puerta_con_lados(self, una_hab, otra_hab):
-        """Crea una puerta conectando dos habitaciones"""
-        puerta = self.fabricar_puerta()
-        puerta.lado1 = una_hab
-        puerta.lado2 = otra_hab
-        return puerta
-    
 
-    def fabricar_lab2hab(self):
-        """Crea un laberinto de 2 habitaciones con paredes bomba"""
-        hab1 = Habitacion(1)
-        hab2 = Habitacion(2)
+    def fabricarEste(self):
+        return Este.default()
+
+    def fabricarHabitacion(self, unNum=None):
+        if unNum is None:
+            return Habitacion()
         
-        puerta = self.fabricar_puerta()
+        hab = Habitacion()
+        hab.num = unNum
+        self.asignarOrientaciones(hab)
+        for each in hab.orientaciones:
+            hab.ponerEn_elemento(each, self.fabricarPared())
+        return hab
+
+    def fabricarLab2Hab(self):
+        from habitacion import Habitacion
+        from puerta import Puerta
+        from pared import Pared
+        from laberinto import Laberinto
+        hab1 = Habitacion()
+        hab1.num = 1
+        hab2 = Habitacion()
+        hab2.num = 2
+        puerta = Puerta()
         puerta.lado1 = hab1
         puerta.lado2 = hab2
-        
         hab1.sur = puerta
         hab2.norte = puerta
-        
-        # Paredes bomba en habitación 1
+        hab1.este = Pared()
+        hab1.oeste = Pared()
+        hab1.norte = Pared()
+        hab2.este = Pared()
+        hab2.oeste = Pared()
+        hab2.sur = Pared()
+        self.laberinto = Laberinto()
+        self.laberinto.agregarHabitacion(hab1)
+        self.laberinto.agregarHabitacion(hab2)
+
+    def fabricarLab2HabBomba(self):
+        from habitacion import Habitacion
+        from puerta import Puerta
+        from pared_bomba import ParedBomba
+        from laberinto import Laberinto
+        hab1 = Habitacion()
+        hab1.num = 1
+        hab2 = Habitacion()
+        hab2.num = 2
+        puerta = Puerta()
+        puerta.lado1 = hab1
+        puerta.lado2 = hab2
+        hab1.sur = puerta
+        hab2.norte = puerta
         hab1.este = ParedBomba()
         hab1.oeste = ParedBomba()
         hab1.norte = ParedBomba()
-        
-        # Paredes bomba en habitación 2
         hab2.este = ParedBomba()
         hab2.oeste = ParedBomba()
         hab2.sur = ParedBomba()
-        
-        self.laberinto = self.fabricar_laberinto()
-        self.laberinto.agregar_habitacion(hab1)
-        self.laberinto.agregar_habitacion(hab2)
-    
+        self.laberinto = Laberinto()
+        self.laberinto.agregarHabitacion(hab1)
+        self.laberinto.agregarHabitacion(hab2)
 
+    def fabricarLab2HabFM(self):
+        hab1 = self.fabricarHabitacion(1)
+        hab2 = self.fabricarHabitacion(2)
+        puerta = self.fabricarPuertaLado1_lado2(hab1, hab2)
+        hab1.ponerEn_elemento(self.fabricarSur(), puerta)
+        hab2.ponerEn_elemento(self.fabricarNorte(), puerta)
+        self.laberinto = self.fabricarLaberinto()
+        self.laberinto.agregarHabitacion(hab1)
+        self.laberinto.agregarHabitacion(hab2)
 
-    def fabricar_lab2hab_fm(self):
-        """Crea un laberinto de 2 habitaciones usando métodos de fábrica"""
-        hab1 = self.fabricar_habitacion_con_num(1)
-        hab2 = self.fabricar_habitacion_con_num(2)
-        
-        puerta = self.fabricar_puerta_con_lados(hab1, hab2)
-        
-        hab1.sur = puerta
-        hab2.norte = puerta
-        
-        self.laberinto = self.fabricar_laberinto()
-        self.laberinto.agregar_habitacion(hab1)
-        self.laberinto.agregar_habitacion(hab2)
-    
-
-
-    def fabricar_lab4hab_fm(self):
-        """Crea un laberinto de 4 habitaciones"""
-        hab1 = self.fabricar_habitacion_con_num(1)
-        hab2 = self.fabricar_habitacion_con_num(2)
-        hab3 = self.fabricar_habitacion_con_num(3)
-        hab4 = self.fabricar_habitacion_con_num(4)
-        
-        p12 = self.fabricar_puerta_con_lados(hab1, hab2)
-        p13 = self.fabricar_puerta_con_lados(hab1, hab3)
-        p24 = self.fabricar_puerta_con_lados(hab2, hab4)
-        p34 = self.fabricar_puerta_con_lados(hab3, hab4)
-        
+    def fabricarLab4Hab2BmFM(self):
+        from bomba import Bomba
+        hab1 = self.fabricarHabitacion(1)
+        hab2 = self.fabricarHabitacion(2)
+        hab3 = self.fabricarHabitacion(3)
+        hab4 = self.fabricarHabitacion(4)
+        p12 = self.fabricarPuertaLado1_lado2(hab1, hab2)
+        p13 = self.fabricarPuertaLado1_lado2(hab1, hab3)
+        p24 = self.fabricarPuertaLado1_lado2(hab2, hab4)
+        p34 = self.fabricarPuertaLado1_lado2(hab3, hab4)
         hab1.sur = p12
         hab2.norte = p12
-        
         hab1.este = p13
         hab3.oeste = p13
-        
         hab2.este = p24
         hab4.oeste = p24
-        
         hab3.sur = p34
         hab4.norte = p34
-        
-        self.laberinto = self.fabricar_laberinto()
-        self.laberinto.agregar_habitacion(hab1)
-        self.laberinto.agregar_habitacion(hab2)
-        self.laberinto.agregar_habitacion(hab3)
-        self.laberinto.agregar_habitacion(hab4)
-    
+        bm1 = Bomba()
+        hab1.agregarHijo(bm1)
+        bm2 = Bomba()
+        hab3.agregarHijo(bm2)
+        self.laberinto = self.fabricarLaberinto()
+        self.laberinto.agregarHabitacion(hab1)
+        self.laberinto.agregarHabitacion(hab2)
+        self.laberinto.agregarHabitacion(hab3)
+        self.laberinto.agregarHabitacion(hab4)
 
-
-    def fabricar_lab4hab2bm_fm(self):
-        """Crea un laberinto de 4 habitaciones con 2 bombas"""
-        hab1 = self.fabricar_habitacion_con_num(1)
-        hab2 = self.fabricar_habitacion_con_num(2)
-        hab3 = self.fabricar_habitacion_con_num(3)
-        hab4 = self.fabricar_habitacion_con_num(4)
-        
-        p12 = self.fabricar_puerta_con_lados(hab1, hab2)
-        p13 = self.fabricar_puerta_con_lados(hab1, hab3)
-        p24 = self.fabricar_puerta_con_lados(hab2, hab4)
-        p34 = self.fabricar_puerta_con_lados(hab3, hab4)
-        
+    def fabricarLab4HabFM(self):
+        hab1 = self.fabricarHabitacion(1)
+        hab2 = self.fabricarHabitacion(2)
+        hab3 = self.fabricarHabitacion(3)
+        hab4 = self.fabricarHabitacion(4)
+        p12 = self.fabricarPuertaLado1_lado2(hab1, hab2)
+        p13 = self.fabricarPuertaLado1_lado2(hab1, hab3)
+        p24 = self.fabricarPuertaLado1_lado2(hab2, hab4)
+        p34 = self.fabricarPuertaLado1_lado2(hab3, hab4)
         hab1.sur = p12
         hab2.norte = p12
-        
         hab1.este = p13
         hab3.oeste = p13
-        
         hab2.este = p24
         hab4.oeste = p24
-        
         hab3.sur = p34
         hab4.norte = p34
-        
-        bm1 = Bomba(hab1)  
-        hab1.agregar_hijo(bm1)
-        
-        bm2 = Bomba(hab3)
-        hab3.agregar_hijo(bm2)
-        
-        self.laberinto = self.fabricar_laberinto()
-        self.laberinto.agregar_habitacion(hab1)
-        self.laberinto.agregar_habitacion(hab2)
-        self.laberinto.agregar_habitacion(hab3)
-        self.laberinto.agregar_habitacion(hab4)
+        self.laberinto = self.fabricarLaberinto()
+        self.laberinto.agregarHabitacion(hab1)
+        self.laberinto.agregarHabitacion(hab2)
+        self.laberinto.agregarHabitacion(hab3)
+        self.laberinto.agregarHabitacion(hab4)
+
+    def fabricarLaberinto(self):
+        from laberinto import Laberinto
+        return Laberinto()
+
+    def fabricarNorte(self):
+        return Norte.default()
     
+    def fabricarSur(self):
+        return Sur.default()
+
+    def fabricarOeste(self):
+        return Oeste.default()
+
+    def fabricarPared(self):
+        from pared import Pared
+        return Pared()
+
+    def fabricarPuerta(self):
+        from puerta import Puerta
+        return Puerta()
+
+    def fabricarPuertaLado1_lado2(self, unaHab, otraHab):
+        from puerta import Puerta
+        puerta = Puerta()
+        puerta.lado1 = unaHab
+        puerta.lado2 = otraHab
+        return puerta
 
 
-    
-    
-    
+    # --- accessing  ---
+    def obtenerHabitacion(self, unNum):
+        return self.laberinto.obtenerHabitacion(unNum)
+
