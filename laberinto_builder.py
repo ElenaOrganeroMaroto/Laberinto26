@@ -117,21 +117,14 @@ class LaberintoBuilder:
     def fabricarSur(self):   return Sur.default()
     def fabricarEste(self):  return Este.default()
     def fabricarOeste(self): return Oeste.default()
-    
-    def fabricarNoreste(self):
-        return Noreste.default()
-    
-    def fabricarNoroeste(self):
-        return Noroeste.default()
+    def fabricarNoreste(self): return Noreste.default()
+    def fabricarNoroeste(self): return Noroeste.default()
+    def fabricarSureste(self): return Sureste.default()
+    def fabricarSuroeste(self): return Suroeste.default()
 
-    def fabricarSureste(self):
-        return Sureste.default()
+    # --- Otros métodos ---
+    def fabricarPared(self): return Pared()
 
-    def fabricarSuroeste(self):
-        return Suroeste.default()
+    def fabricarPerezoso(self): return Perezoso()
 
-    def fabricarPared(self):
-        return Pared()
 
-    def fabricarPerezoso(self):
-        return Perezoso()
