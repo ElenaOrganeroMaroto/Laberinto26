@@ -107,8 +107,8 @@ proceso de construcción se utiliza para crear diferentes representaciones.
 ---
 
 
-## 10. 
-
+## 10. Proxy
+Proporciona un sustituto o referencia a otro objeto para controlar el acceso a ese objeto
 
 <p align="center">
 
@@ -117,8 +117,9 @@ proceso de construcción se utiliza para crear diferentes representaciones.
 ---
 
 
-## 11. 
-
+## 11. Adapter
+Convierte la interface de una clase en la interface que espera el cliente. El Adapter permite
+trabajar juntas a unas clases que tienen interfaces incompatibles
 
 <p align="center">
 
