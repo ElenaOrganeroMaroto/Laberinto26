@@ -108,7 +108,7 @@ proceso de construcción se utiliza para crear diferentes representaciones.
 
 
 ## 10. Proxy
-Proporciona un sustituto o referencia a otro objeto para controlar el acceso a ese objeto
+Proporciona un sustituto o referencia a otro objeto para controlar el acceso a ese objeto.
 
 <p align="center">
 
@@ -119,7 +119,7 @@ Proporciona un sustituto o referencia a otro objeto para controlar el acceso a e
 
 ## 11. Adapter
 Convierte la interface de una clase en la interface que espera el cliente. El Adapter permite
-trabajar juntas a unas clases que tienen interfaces incompatibles
+trabajar juntas a unas clases que tienen interfaces incompatibles.
 
 <p align="center">
 
@@ -128,8 +128,9 @@ trabajar juntas a unas clases que tienen interfaces incompatibles
 ---
 
 
-## 12. 
-
+## 12. Bridge
+Desacopla una abstracción de su implementación de modo que las dos puedan variar de forma
+independiente.
 
 <p align="center">
 
@@ -138,7 +139,10 @@ trabajar juntas a unas clases que tienen interfaces incompatibles
 ---
 
 
-## 13. 
+## 13. Mediator
+Define un objeto que encapsula la interacción entre un conjunto de objetos. El Mediator
+promueve un acoplamiento débil al evitar que los objetos tengan referencia al resto de objetos
+de forma explícita, lo cual permite variar su interacción de forma independiente.
 
 
 <p align="center">
