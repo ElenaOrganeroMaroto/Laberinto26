@@ -101,7 +101,7 @@ Separa la construcción de un objeto complejo de su representación, de modo que
 proceso de construcción se utiliza para crear diferentes representaciones.
 
 <p align="center">
-
+<img width="100%" alt="09  Builder" src="https://github.com/user-attachments/assets/1418dfd1-3136-414c-a3c4-431c4cd2c7cf" />
 </p>
 
 ---
