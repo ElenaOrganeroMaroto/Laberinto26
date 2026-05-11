@@ -46,6 +46,7 @@ Strategy es un patrón de diseño de comportamiento que te permite definir una f
 Composite es un patrón de diseño estructural que te permite componer objetos en estructuras de árbol y trabajar con esas estructuras como si fueran objetos individuales.
 
 <p align="center">
+<img width="100%" alt="04  Composite" src="https://github.com/user-attachments/assets/c6767fbf-ba0e-4e2f-bfe3-367931b91bfa" />
 
 </p>
 
