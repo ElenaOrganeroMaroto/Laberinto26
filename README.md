@@ -94,7 +94,7 @@ Singleton es un patrón de diseño creacional que nos permite asegurarnos de que
 Builder es un patrón de diseño creacional que nos permite construir objetos complejos paso a paso. El patrón nos permite producir distintos tipos y representaciones de un objeto empleando el mismo código de construcción.
 
 <p align="center">
-
+<img width="100%" alt="09  Builder" src="https://github.com/user-attachments/assets/d03d6072-6330-48c0-9cde-1e511e21505d" />
 </p>
 
 ---
