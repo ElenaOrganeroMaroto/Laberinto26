@@ -101,9 +101,10 @@ Builder es un patrón de diseño creacional que nos permite construir objetos co
 
 
 ## 10. Proxy
-Proporciona un sustituto o referencia a otro objeto para controlar el acceso a ese objeto.
+Proxy es un patrón de diseño estructural que te permite proporcionar un sustituto o marcador de posición para otro objeto. Un proxy controla el acceso al objeto original, permitiéndote hacer algo antes o después de que la solicitud llegue al objeto original.
 
 <p align="center">
+<img width="100%"  alt="10  Proxy" src="https://github.com/user-attachments/assets/44ac55e0-80fe-4b6e-bdeb-2010c289d4a3" />
 
 </p>
 
