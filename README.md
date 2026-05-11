@@ -80,11 +80,11 @@ Abstract Factory es un patrón de diseño creacional que nos permite producir fa
 ---
 
 ## 08. Singleton
-Asegura que una clase sólo tiene una instancia y proporciona un punto de acceso a la 
-instancia.
+Singleton es un patrón de diseño creacional que nos permite asegurarnos de que una clase tenga una única instancia, a la vez que proporciona un punto de acceso global a dicha instancia.
 
 <p align="center">
-<img width="100%" alt="08  Singleton" src="https://github.com/user-attachments/assets/ca5456ec-6897-43e3-9e42-b8863809d459" />
+<img width="100%"  alt="08  Singleton" src="https://github.com/user-attachments/assets/8cbf442d-cafc-4888-8218-756adf2507ee" />
+
 </p>
 
 ---
