@@ -3,25 +3,25 @@ La Bruja Malvada ha secuestrado a los siete enanitos. Tu misión es infiltrarte 
 
 ## 1. Controles de Movimiento
 Usa las teclas de dirección clásicas para moverte por las salas del castillo:
-W: Moverse hacia arriba.
-S: Moverse hacia abajo.
-A: Moverse hacia la izquierda.
-D: Moverse hacia la derecha.
+- W: Moverse hacia arriba.
+- S: Moverse hacia abajo.
+- A: Moverse hacia la izquierda.
+- D: Moverse hacia la derecha.
 
 ## 2. Acciones y Objetos
 Para interactuar con el entorno y los objetos mágicos, utiliza:
-R: Recoger objeto del suelo.
-L: Lanzar el objeto que tengas en la mano.
+- R: Recoger objeto del suelo.
+- L: Lanzar el objeto que tengas en la mano.
 
 ## 3. Objetos Mágicos:
-Manzana Roja: Lánzala cerca de un enanito para salvarlo.
-Manzana Verde: Lánzala contra los bichos para eliminarlos.
-Tijeras: Úsalas para romper la puerta enredadera y escapar.
+- Manzana Roja: Lánzala cerca de un enanito para salvarlo.
+- Manzana Verde: Lánzala contra los bichos para eliminarlos.
+- Tijeras: Úsalas para romper la puerta enredadera y escapar.
 
 ## 4. Enemigos
 El castillo está lleno de peligros. Dependiendo del tipo de enemigo, el daño que recibes varía:
-Bichos Agresivos: Son rápidos y peligrosos. Si te tocan, pierdes 2 vidas.
-Bichos Perezosos: Son más lentos, pero no te confíes. Si te tocan, pierdes 1 vida.
+- Bichos Agresivos: Son rápidos y peligrosos. Si te tocan, pierdes 2 vidas.
+- Bichos Perezosos: Son más lentos, pero no te confíes. Si te tocan, pierdes 1 vida.
 
 ## 5. Objetivo Final
 Para ganar la partida (VICTORIA), debes cumplir estos pasos en orden:
