@@ -15,7 +15,7 @@ Los componentes principales que forman el laberinto son los siguientes:
 Factory Method es un patrón de diseño creacional que proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.
 
 <p align="center">
-<img width="100%"  alt="01  Factory Method" src="https://github.com/user-attachments/assets/05f0ab58-b828-4f71-bda9-0e95371b0c32" />
+<img width="50%"  alt="01  Factory Method" src="https://github.com/user-attachments/assets/05f0ab58-b828-4f71-bda9-0e95371b0c32" />
 
 </p>
 
