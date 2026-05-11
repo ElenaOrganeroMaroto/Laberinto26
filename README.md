@@ -52,11 +52,10 @@ Composite es un patrón de diseño estructural que te permite componer objetos e
 ---
 
 ## 05. Iterator
-Proporciona una forma de acceder secuencialmente a los elementos de un agregado
-(colección, conjunto, aggregate) sin exponer su implementación.
+Iterator es un patrón de diseño de comportamiento que te permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).
 
 <p align="center">
-<img width="100%" alt="05  Iterator" src="https://github.com/user-attachments/assets/353912e0-4d2a-43fa-935f-15fa961558ad" />
+
 
 </p>
 
