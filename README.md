@@ -184,6 +184,8 @@ Prototype es un patrón de diseño creacional que nos permite copiar objetos exi
 
 
 ## 18. Visitor
+Visitor es un patrón de diseño de comportamiento que te permite separar algoritmos de los objetos sobre los que operan.
+
 <p align="center">
 
 </p>
