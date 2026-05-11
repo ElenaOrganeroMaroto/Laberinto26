@@ -122,10 +122,10 @@ Adapter es un patrón de diseño estructural que permite la colaboración entre 
 
 
 ## 12. Bridge
-Desacopla una abstracción de su implementación de modo que las dos puedan variar de forma
-independiente.
+Bridge es un patrón de diseño estructural que te permite dividir una clase grande, o un grupo de clases estrechamente relacionadas, en dos jerarquías separadas (abstracción e implementación) que pueden desarrollarse independientemente la una de la otra.
 
 <p align="center">
+<img width="100%"  alt="12  Bridge" src="https://github.com/user-attachments/assets/0bb7e31b-a05c-4eb1-95b1-85a740c1460a" />
 
 </p>
 
