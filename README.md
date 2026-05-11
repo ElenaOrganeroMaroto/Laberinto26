@@ -33,11 +33,11 @@ Decorator es un patrón de diseño estructural que te permite añadir funcionali
 ---
 
 ## 03. Strategy
-Define una familia de algoritmos, encapsula cada uno en un objeto, de modo que son
-intercambiables. El Strategy permite cambiar el algoritmo sin que afecte al cliente.
+Strategy es un patrón de diseño de comportamiento que te permite definir una familia de algoritmos, colocar cada uno de ellos en una clase separada y hacer sus objetos intercambiables.
 
 <p align="center">
-<img width="100%" alt="03  Strategy" src="https://github.com/user-attachments/assets/f0ee1cfb-c890-42dc-9acc-59a4809f3b42" />
+<img width="100%" alt="03  Strategy" src="https://github.com/user-attachments/assets/1fd23d6d-70df-428c-b054-cf1ecf7ef7c5" />
+
 </p>
 
 ---
