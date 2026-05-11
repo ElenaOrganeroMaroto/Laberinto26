@@ -173,7 +173,10 @@ State es un patrón de diseño de comportamiento que permite a un objeto alterar
 
 
 ## 17. Prototype
+Prototype es un patrón de diseño creacional que nos permite copiar objetos existentes sin que el código dependa de sus clases.
+
 <p align="center">
+<img width="100%" alt="17  Prototype" src="https://github.com/user-attachments/assets/ec05b430-3e38-4052-b5b9-86bea501f50b" />
 
 </p>
 
