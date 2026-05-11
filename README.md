@@ -23,11 +23,11 @@ Factory Method es un patrón de diseño creacional que proporciona una interfaz 
 ---
 
 ## 02. Decorator
-Asigna dinámicamente responsabilidades adicionales a un objeto. Los decoradores
-proporcionan una alternativa flexible a la subclasificación para extender la funcionalidad.
+Decorator es un patrón de diseño estructural que te permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades.
 
 <p align="center">
-<img width="100%" alt="02  Decorator" src="https://github.com/user-attachments/assets/1c89473b-76c7-4567-8485-bcfa0eace136" />
+<img width="100%" alt="02  Decorator" src="https://github.com/user-attachments/assets/bfcbf185-326e-495a-897a-76fb02f922de" />
+
 </p>
 
 ---
