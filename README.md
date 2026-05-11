@@ -135,7 +135,57 @@ Bridge es un patrón de diseño estructural que te permite dividir una clase gra
 ## 13. Mediator
 Mediator es un patrón de diseño de comportamiento que te permite reducir las dependencias caóticas entre objetos. El patrón restringe las comunicaciones directas entre los objetos, forzándolos a colaborar únicamente a través de un objeto mediador.
 
+<p align="center">
 
+</p>
+
+---
+
+
+## 14. Observer
+<p align="center">
+
+</p>
+
+---
+
+
+## 15. Command
+Command es un patrón de diseño de comportamiento que convierte una solicitud en un objeto independiente que contiene toda la información sobre la solicitud. Esta transformación te permite parametrizar los métodos con diferentes solicitudes, retrasar o poner en cola la ejecución de una solicitud y soportar operaciones que no se pueden realizar.
+
+<p align="center">
+<img width="100%" alt="15  Command" src="https://github.com/user-attachments/assets/21ab6c53-1b0a-4e9f-8544-658ee04c4705" />
+
+</p>
+
+---
+
+
+## 16. State
+<p align="center">
+
+</p>
+
+---
+
+
+## 17. Prototype
+<p align="center">
+
+</p>
+
+---
+
+
+## 18. Visitor
+<p align="center">
+
+</p>
+
+---
+
+
+## 19. Flyweight
 <p align="center">
 
 </p>
