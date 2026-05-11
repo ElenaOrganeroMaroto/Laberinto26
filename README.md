@@ -65,7 +65,7 @@ Iterator es un patrón de diseño de comportamiento que te permite recorrer elem
 Template Method es un patrón de diseño de comportamiento que define el esqueleto de un algoritmo en la superclase pero permite que las subclases sobrescriban pasos del algoritmo sin cambiar su estructura.
 
 <p align="center">
-
+<img width="100%" alt="06  Template Method" src="https://github.com/user-attachments/assets/c6abacdb-96a4-4007-b0ad-bca66177e2d8" />
 </p>
 
 ---
