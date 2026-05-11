@@ -133,9 +133,7 @@ Bridge es un patrón de diseño estructural que te permite dividir una clase gra
 
 
 ## 13. Mediator
-Define un objeto que encapsula la interacción entre un conjunto de objetos. El Mediator
-promueve un acoplamiento débil al evitar que los objetos tengan referencia al resto de objetos
-de forma explícita, lo cual permite variar su interacción de forma independiente.
+Mediator es un patrón de diseño de comportamiento que te permite reducir las dependencias caóticas entre objetos. El patrón restringe las comunicaciones directas entre los objetos, forzándolos a colaborar únicamente a través de un objeto mediador.
 
 
 <p align="center">
