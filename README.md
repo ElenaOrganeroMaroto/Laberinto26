@@ -71,11 +71,10 @@ Template Method es un patrón de diseño de comportamiento que define el esquele
 ---
 
 ## 07. Abstract Factory
-Proporciona una interface para crear familias de objetos relacionados o dependientes sin 
-especificar sus clases concretas.
+Abstract Factory es un patrón de diseño creacional que nos permite producir familias de objetos relacionados sin especificar sus clases concretas.
 
 <p align="center">
-<img width="100%" alt="07  Abstract Factory" src="https://github.com/user-attachments/assets/1bdf78b0-d02c-4183-adee-2e2ffbdbb619" />
+
 </p>
 
 ---
