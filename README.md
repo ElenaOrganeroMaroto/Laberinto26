@@ -7,7 +7,7 @@ Los componentes principales que forman el laberinto son los siguientes:
 - Pared: Es un elemento del mapa que no se puede atravesar.
 - Puerta: Es un elemento del mapa que une dos habitaciones.
 
-## Diagrama inicial
+## Diagrama final
 
 
 
