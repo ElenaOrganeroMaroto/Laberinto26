@@ -162,7 +162,10 @@ Command es un patrón de diseño de comportamiento que convierte una solicitud e
 
 
 ## 16. State
+State es un patrón de diseño de comportamiento que permite a un objeto alterar su comportamiento cuando su estado interno cambia. Parece como si el objeto cambiara su clase.
+
 <p align="center">
+<img width="100%"  alt="16  State" src="https://github.com/user-attachments/assets/3c3b8dfa-ab4a-4348-8256-a4eedc473352" />
 
 </p>
 
