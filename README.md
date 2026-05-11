@@ -112,8 +112,7 @@ Proxy es un patrón de diseño estructural que te permite proporcionar un sustit
 
 
 ## 11. Adapter
-Convierte la interface de una clase en la interface que espera el cliente. El Adapter permite
-trabajar juntas a unas clases que tienen interfaces incompatibles.
+Adapter es un patrón de diseño estructural que permite la colaboración entre objetos con interfaces incompatibles.
 
 <p align="center">
 
