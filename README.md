@@ -26,7 +26,7 @@ Factory Method es un patrón de diseño creacional que proporciona una interfaz 
 Decorator es un patrón de diseño estructural que te permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades.
 
 <p align="center">
-<img width="100%" alt="02  Decorator" src="https://github.com/user-attachments/assets/bfcbf185-326e-495a-897a-76fb02f922de" />
+<img width="50%" alt="02  Decorator" src="https://github.com/user-attachments/assets/bfcbf185-326e-495a-897a-76fb02f922de" />
 
 </p>
 
@@ -36,7 +36,7 @@ Decorator es un patrón de diseño estructural que te permite añadir funcionali
 Strategy es un patrón de diseño de comportamiento que te permite definir una familia de algoritmos, colocar cada uno de ellos en una clase separada y hacer sus objetos intercambiables.
 
 <p align="center">
-<img width="100%" alt="03  Strategy" src="https://github.com/user-attachments/assets/1fd23d6d-70df-428c-b054-cf1ecf7ef7c5" />
+<img width="50%" alt="03  Strategy" src="https://github.com/user-attachments/assets/1fd23d6d-70df-428c-b054-cf1ecf7ef7c5" />
 
 </p>
 
@@ -46,7 +46,7 @@ Strategy es un patrón de diseño de comportamiento que te permite definir una f
 Composite es un patrón de diseño estructural que te permite componer objetos en estructuras de árbol y trabajar con esas estructuras como si fueran objetos individuales.
 
 <p align="center">
-<img width="100%" alt="04  Composite" src="https://github.com/user-attachments/assets/c6767fbf-ba0e-4e2f-bfe3-367931b91bfa" />
+<img width="50%" alt="04  Composite" src="https://github.com/user-attachments/assets/c6767fbf-ba0e-4e2f-bfe3-367931b91bfa" />
 
 </p>
 
@@ -56,7 +56,7 @@ Composite es un patrón de diseño estructural que te permite componer objetos e
 Iterator es un patrón de diseño de comportamiento que te permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).
 
 <p align="center">
-<img width="100%" alt="05  Iterator" src="https://github.com/user-attachments/assets/b42feb40-685f-4a52-8534-92c15d018181" />
+<img width="50%" alt="05  Iterator" src="https://github.com/user-attachments/assets/b42feb40-685f-4a52-8534-92c15d018181" />
 </p>
 
 ---
@@ -65,7 +65,7 @@ Iterator es un patrón de diseño de comportamiento que te permite recorrer elem
 Template Method es un patrón de diseño de comportamiento que define el esqueleto de un algoritmo en la superclase pero permite que las subclases sobrescriban pasos del algoritmo sin cambiar su estructura.
 
 <p align="center">
-<img width="100%" alt="06  Template Method" src="https://github.com/user-attachments/assets/c6abacdb-96a4-4007-b0ad-bca66177e2d8" />
+<img width="50%" alt="06  Template Method" src="https://github.com/user-attachments/assets/c6abacdb-96a4-4007-b0ad-bca66177e2d8" />
 </p>
 
 ---
@@ -83,7 +83,7 @@ Abstract Factory es un patrón de diseño creacional que nos permite producir fa
 Singleton es un patrón de diseño creacional que nos permite asegurarnos de que una clase tenga una única instancia, a la vez que proporciona un punto de acceso global a dicha instancia.
 
 <p align="center">
-<img width="100%"  alt="08  Singleton" src="https://github.com/user-attachments/assets/8cbf442d-cafc-4888-8218-756adf2507ee" />
+<img width="50%"  alt="08  Singleton" src="https://github.com/user-attachments/assets/8cbf442d-cafc-4888-8218-756adf2507ee" />
 
 </p>
 
@@ -94,7 +94,7 @@ Singleton es un patrón de diseño creacional que nos permite asegurarnos de que
 Builder es un patrón de diseño creacional que nos permite construir objetos complejos paso a paso. El patrón nos permite producir distintos tipos y representaciones de un objeto empleando el mismo código de construcción.
 
 <p align="center">
-<img width="100%" alt="09  Builder" src="https://github.com/user-attachments/assets/d03d6072-6330-48c0-9cde-1e511e21505d" />
+<img width="50%" alt="09  Builder" src="https://github.com/user-attachments/assets/d03d6072-6330-48c0-9cde-1e511e21505d" />
 </p>
 
 ---
@@ -104,7 +104,7 @@ Builder es un patrón de diseño creacional que nos permite construir objetos co
 Proxy es un patrón de diseño estructural que te permite proporcionar un sustituto o marcador de posición para otro objeto. Un proxy controla el acceso al objeto original, permitiéndote hacer algo antes o después de que la solicitud llegue al objeto original.
 
 <p align="center">
-<img width="100%"  alt="10  Proxy" src="https://github.com/user-attachments/assets/44ac55e0-80fe-4b6e-bdeb-2010c289d4a3" />
+<img width="50%"  alt="10  Proxy" src="https://github.com/user-attachments/assets/44ac55e0-80fe-4b6e-bdeb-2010c289d4a3" />
 
 </p>
 
@@ -125,7 +125,7 @@ Adapter es un patrón de diseño estructural que permite la colaboración entre 
 Bridge es un patrón de diseño estructural que te permite dividir una clase grande, o un grupo de clases estrechamente relacionadas, en dos jerarquías separadas (abstracción e implementación) que pueden desarrollarse independientemente la una de la otra.
 
 <p align="center">
-<img width="100%"  alt="12  Bridge" src="https://github.com/user-attachments/assets/0bb7e31b-a05c-4eb1-95b1-85a740c1460a" />
+<img width="50%"  alt="12  Bridge" src="https://github.com/user-attachments/assets/0bb7e31b-a05c-4eb1-95b1-85a740c1460a" />
 
 </p>
 
@@ -154,7 +154,7 @@ Mediator es un patrón de diseño de comportamiento que te permite reducir las d
 Command es un patrón de diseño de comportamiento que convierte una solicitud en un objeto independiente que contiene toda la información sobre la solicitud. Esta transformación te permite parametrizar los métodos con diferentes solicitudes, retrasar o poner en cola la ejecución de una solicitud y soportar operaciones que no se pueden realizar.
 
 <p align="center">
-<img width="100%" alt="15  Command" src="https://github.com/user-attachments/assets/21ab6c53-1b0a-4e9f-8544-658ee04c4705" />
+<img width="50%" alt="15  Command" src="https://github.com/user-attachments/assets/21ab6c53-1b0a-4e9f-8544-658ee04c4705" />
 
 </p>
 
@@ -165,7 +165,7 @@ Command es un patrón de diseño de comportamiento que convierte una solicitud e
 State es un patrón de diseño de comportamiento que permite a un objeto alterar su comportamiento cuando su estado interno cambia. Parece como si el objeto cambiara su clase.
 
 <p align="center">
-<img width="100%"  alt="16  State" src="https://github.com/user-attachments/assets/3c3b8dfa-ab4a-4348-8256-a4eedc473352" />
+<img width="50%"  alt="16  State" src="https://github.com/user-attachments/assets/3c3b8dfa-ab4a-4348-8256-a4eedc473352" />
 
 </p>
 
