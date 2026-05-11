@@ -24,7 +24,7 @@ El castillo está lleno de peligros. Dependiendo del tipo de enemigo, el daño q
 - Bichos Perezosos: Son más lentos, pero no te confíes. Si te tocan, pierdes 1 vida.
 
 ## 5. Objetivo Final
-Para ganar la partida (VICTORIA), debes cumplir estos pasos en orden:
+Para ganar la partida, debes cumplir estos pasos en orden:
 1. Rescatar a los 7 enanitos usando las manzanas rojas.
 2. Eliminar a las amenazas con las manzanas verdes.
 3. Conseguir las tijeras mágicas.
