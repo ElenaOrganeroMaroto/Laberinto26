@@ -56,8 +56,7 @@ Composite es un patrón de diseño estructural que te permite componer objetos e
 Iterator es un patrón de diseño de comportamiento que te permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).
 
 <p align="center">
-
-
+<img width="100%" alt="05  Iterator" src="https://github.com/user-attachments/assets/b42feb40-685f-4a52-8534-92c15d018181" />
 </p>
 
 ---
